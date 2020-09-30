@@ -5,7 +5,7 @@ function printSite(txtsrc){
 }
 
 function createModel(){
-  const input = tf.layers.dense({shape:[1]});
+  const input = tf.layers.dense({shape:[1], units: 1});
   const d1 = tf.layers.dense({units: 5, activation: "relu"}).apply(input);
   const output = tf.layers.dense({units: 1, activation: "relu"}).apply(d1);
   const model = tf.model({inputs: input, outputs: output});
